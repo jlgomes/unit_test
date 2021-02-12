@@ -1,24 +1,18 @@
 package com.josiaslgomes.unit.test.repository;
 
 import com.josiaslgomes.unit.test.model.Users;
-import com.josiaslgomes.unit.test.repository.UsersRepository;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
-import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace.NONE;
 
-@ActiveProfiles("test")
-@RunWith(SpringRunner.class)
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = NONE)
 public class UsersRepositoryTest {
@@ -31,7 +25,7 @@ public class UsersRepositoryTest {
 
     private Users users;
 
-    @Before
+    @BeforeAll
     public void setUp() {
         users = new Users();
         users.setName("BigG");
